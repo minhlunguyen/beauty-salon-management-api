@@ -1,0 +1,15 @@
+version: '2.2'
+
+services:
+  ## MongoDB replicaset
+  mongo:
+    image: mongo:4.4
+    # Uncomment to access DB at port 27017
+    ports:
+    - '27017:27017'
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0" ]
+  mongo_init_replicaset:
+    image: mongo:4.4
+    entrypoint: [ "/bin/sh", "-c", "sleep 3 && mongo mongo:27017 --eval 'rs.initiate({_id : \"rs0\",members: [{_id : 0, host: \"localhost:27017\"}]})'" ]
+    depends_on:
+      - mongo

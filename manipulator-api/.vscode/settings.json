@@ -1,0 +1,28 @@
+{
+    "search.exclude": {
+        "**/.nyc_output": true,
+        "**/.vscode": true,
+        "**/coverage": true,
+        "**/dist": true,
+        "**/node_modules": true,
+        "**/.history": true,
+        "**/.static": true,
+        "**/.tmp": true,
+        "**/.git": true
+    },
+    "editor.hover.delay": 800,
+    "eslint.options": {
+        "extensions": [
+            ".js",
+            ".ts",
+            ".json"
+        ]
+    },
+    "eslint.format.enable": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.alwaysShowStatus": true,
+    "git.terminalAuthentication": false,
+    "github.gitAuthentication": false
+}
